@@ -222,9 +222,9 @@ h1 {
 
 .memory-feld {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.6rem;
-  width: min(92vw, 420px);
+  width: min(100%, 420px);
 }
 
 .memory-karte {
@@ -255,9 +255,10 @@ h1 {
 
 .feld-2048 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
   gap: 0.5rem;
-  width: min(92vw, 420px);
+  width: min(100%, 420px);
   aspect-ratio: 1;
   padding: 0.5rem;
   background: var(--karte-bg);
@@ -277,7 +278,7 @@ h1 {
 
 .snake-leinwand {
   display: block;
-  width: min(92vw, 400px);
+  width: min(100%, 400px);
   aspect-ratio: 1;
   background: #0d1220;
   border: 1px solid var(--linie);
