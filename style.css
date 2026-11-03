@@ -1,0 +1,311 @@
+@font-face {
+  font-family: "Nasalization";
+  src: url("schriften/typodermic/nasalization.otf") format("opentype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --bg: #0a0c16;
+  --text: #E8E9FF;
+  --karte-bg: #12152a;
+  --linie: #2c3157;
+  --akzent: #00f0ff;
+  --akzent-rgb: 0, 240, 255;
+  --pink: #ff2ea6;
+  --font: "Nasalization", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.5;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -15%;
+  left: -15%;
+  width: 55vmax;
+  height: 55vmax;
+  border-radius: 50%;
+  background: rgba(var(--akzent-rgb), 0.12);
+  filter: blur(90px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -15%;
+  right: -15%;
+  width: 55vmax;
+  height: 55vmax;
+  border-radius: 50%;
+  background: rgba(255, 46, 166, 0.1);
+  filter: blur(90px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+a {
+  color: var(--text);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.seite {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 3rem;
+}
+
+.kopf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.zurueck {
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+.zurueck:hover {
+  opacity: 1;
+}
+
+.coins {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: var(--karte-bg);
+  border: 1px solid #ffd23d;
+  border-radius: 999px;
+  box-shadow: 0 0 14px rgba(255, 210, 61, 0.3);
+}
+
+.coins strong {
+  color: #ffd23d;
+}
+
+.coin-symbol {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffd23d;
+  box-shadow: 0 0 8px #ffd23d;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 14px rgba(var(--akzent-rgb), 0.55);
+}
+
+.untertitel {
+  margin: 0 0 2rem;
+  opacity: 0.75;
+}
+
+.spiele-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.karte {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: var(--karte-bg);
+  border: 1px solid var(--linie);
+  border-radius: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.karte:hover {
+  transform: translateY(-3px);
+  border-color: var(--akzent);
+  box-shadow: 0 0 22px rgba(var(--akzent-rgb), 0.25);
+}
+
+.karte h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.karte p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.karte .belohnung {
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: #ffd23d;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  font-family: var(--font);
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--bg);
+  background: var(--akzent);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(var(--akzent-rgb), 0.45);
+}
+
+.button:hover {
+  filter: brightness(1.1);
+}
+
+.button.leise {
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--linie);
+  box-shadow: none;
+}
+
+.hinweis {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* Spielseiten */
+
+.statuszeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.meldung {
+  min-height: 1.6rem;
+  margin: 0.75rem 0 1rem;
+  color: #ffd23d;
+}
+
+.spielfeld {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.memory-feld {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  width: min(92vw, 420px);
+}
+
+.memory-karte {
+  aspect-ratio: 1;
+  font-size: clamp(1.6rem, 9vw, 2.6rem);
+  color: var(--text);
+  background: var(--karte-bg);
+  border: 1px solid var(--linie);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.memory-karte:hover {
+  border-color: var(--akzent);
+}
+
+.memory-karte.offen {
+  border-color: var(--akzent);
+  box-shadow: 0 0 12px rgba(var(--akzent-rgb), 0.4);
+}
+
+.memory-karte.gefunden {
+  border-color: #5dff8a;
+  background: rgba(93, 255, 138, 0.12);
+  cursor: default;
+}
+
+.feld-2048 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  width: min(92vw, 420px);
+  aspect-ratio: 1;
+  padding: 0.5rem;
+  background: var(--karte-bg);
+  border: 1px solid var(--linie);
+  border-radius: 12px;
+}
+
+.kachel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 6vw, 1.9rem);
+  background: rgba(232, 233, 255, 0.06);
+}
+
+.snake-leinwand {
+  display: block;
+  width: min(92vw, 400px);
+  aspect-ratio: 1;
+  background: #0d1220;
+  border: 1px solid var(--linie);
+  border-radius: 12px;
+}
+
+.steuerkreuz {
+  display: grid;
+  grid-template-columns: repeat(3, 64px);
+  grid-template-rows: repeat(2, 64px);
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+}
+
+.steuerkreuz button {
+  font-size: 1.5rem;
+  color: var(--text);
+  background: var(--karte-bg);
+  border: 1px solid var(--linie);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.steuerkreuz button:active {
+  border-color: var(--akzent);
+}
+
+.steuerkreuz .oben { grid-column: 2; grid-row: 1; }
+.steuerkreuz .links { grid-column: 1; grid-row: 2; }
+.steuerkreuz .unten { grid-column: 2; grid-row: 2; }
+.steuerkreuz .rechts { grid-column: 3; grid-row: 2; }

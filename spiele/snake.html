@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake – Rezepte-Spiele</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="seite">
+    <header class="kopf">
+      <a class="zurueck" href="../index.html">← Alle Spiele</a>
+      <div class="coins"><span class="coin-symbol"></span><strong data-coins>0</strong> Coins</div>
+    </header>
+
+    <h1>Snake</h1>
+    <div class="statuszeile">
+      <span>Äpfel: <strong id="aepfel">0</strong></span>
+      <span>Bestwert: <strong id="best">0</strong></span>
+      <button type="button" class="button" id="start">Start</button>
+    </div>
+    <p class="meldung" id="meldung" role="status"></p>
+    <canvas class="snake-leinwand spielfeld" id="leinwand" width="320" height="320" aria-label="Spielfeld"></canvas>
+
+    <div class="steuerkreuz" aria-label="Steuerung">
+      <button type="button" class="oben" data-richtung="oben" aria-label="Hoch">▲</button>
+      <button type="button" class="links" data-richtung="links" aria-label="Links">◀</button>
+      <button type="button" class="unten" data-richtung="unten" aria-label="Runter">▼</button>
+      <button type="button" class="rechts" data-richtung="rechts" aria-label="Rechts">▶</button>
+    </div>
+  </div>
+
+  <script src="../coins.js"></script>
+  <script src="snake.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2048 – Rezepte-Spiele</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="seite">
+    <header class="kopf">
+      <a class="zurueck" href="../index.html">← Alle Spiele</a>
+      <div class="coins"><span class="coin-symbol"></span><strong data-coins>0</strong> Coins</div>
+    </header>
+
+    <h1>2048</h1>
+    <div class="statuszeile">
+      <span>Punkte: <strong id="punkte">0</strong></span>
+      <span>Bestwert: <strong id="best">0</strong></span>
+      <button type="button" class="button leise" id="neu">Neue Runde</button>
+    </div>
+    <p class="meldung" id="meldung" role="status"></p>
+    <div class="feld-2048 spielfeld" id="feld" aria-label="Spielfeld"></div>
+  </div>
+
+  <script src="../coins.js"></script>
+  <script src="2048.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rezepte-Spiele</title>
+  <meta name="description" content="Minispiele zur Rezeptseite: Spielen, Coins sammeln.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="seite">
+    <header class="kopf">
+      <a class="zurueck" href="../websiterezepte/index.html">← Zu den Rezepten</a>
+      <div class="coins"><span class="coin-symbol"></span><strong data-coins>0</strong> Coins</div>
+    </header>
+
+    <h1>Rezepte-Spiele</h1>
+    <p class="untertitel">Spiel eine Runde und sammle Coins.</p>
+
+    <div class="spiele-grid">
+      <article class="karte">
+        <h2>Memory</h2>
+        <p>Finde alle Paare mit Lebensmitteln. Je weniger Züge, desto mehr Coins.</p>
+        <span class="belohnung">5 bis 15 Coins pro Runde</span>
+        <a class="button" href="spiele/memory.html">Spielen</a>
+      </article>
+      <article class="karte">
+        <h2>2048</h2>
+        <p>Schiebe die Kacheln zusammen. Wische oder nutze die Pfeiltasten.</p>
+        <span class="belohnung">1 Coin pro 100 Punkte, bis 25</span>
+        <a class="button" href="spiele/2048.html">Spielen</a>
+      </article>
+      <article class="karte">
+        <h2>Snake</h2>
+        <p>Friss die Äpfel und werde länger, ohne dich selbst zu treffen.</p>
+        <span class="belohnung">1 Coin pro Apfel, bis 30</span>
+        <a class="button" href="spiele/snake.html">Spielen</a>
+      </article>
+    </div>
+
+    <p class="hinweis">Dein Münzstand wird nur in deinem Browser gespeichert. Es werden keine Daten an uns gesendet.</p>
+  </div>
+
+  <script src="coins.js"></script>
+</body>
+</html>
