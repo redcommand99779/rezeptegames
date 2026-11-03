@@ -68,6 +68,7 @@ function beenden() {
   clearInterval(timer);
   timer = null;
   const coins = coinsGutschreiben(Math.min(30, aepfel));
+  spielRunde("snake");
   if (aepfel > bestLesen()) bestSpeichern(aepfel);
   bestAnzeige.textContent = bestLesen();
   meldung.textContent = `Game Over mit ${aepfel} ${aepfel === 1 ? "Apfel" : "Äpfeln"}. +${coins} ${coins === 1 ? "Coin" : "Coins"}`;

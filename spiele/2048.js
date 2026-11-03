@@ -41,6 +41,7 @@ function neueKachel() {
 function auszahlen() {
   if (ausgezahlt) return 0;
   ausgezahlt = true;
+  if (punkte > 0) spielRunde("2048");
   return coinsGutschreiben(Math.min(25, Math.floor(punkte / 100)));
 }
 

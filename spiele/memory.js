@@ -42,6 +42,7 @@ function gewonnen() {
   // 5 Coins fürs Durchspielen, bis zu 10 weitere für wenige Züge (16 Karten brauchen mindestens 8 Züge)
   const bonus = Math.min(10, Math.max(0, 20 - zuege));
   const coins = coinsGutschreiben(5 + bonus);
+  spielRunde("memory");
   meldung.textContent = `Geschafft in ${zuege} Zügen! +${coins} Coins`;
 }
 
