@@ -112,6 +112,15 @@ button:focus-visible {
   box-shadow: 0 0 8px #ffd23d;
 }
 
+.logo {
+  display: block;
+  width: min(100%, 560px);
+  height: auto;
+  margin: 0 0 1.5rem;
+  border: 1px solid var(--linie);
+  border-radius: 10px;
+}
+
 h1 {
   margin: 0 0 0.5rem;
   font-size: clamp(1.9rem, 6vw, 3rem);
