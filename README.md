@@ -6,6 +6,7 @@ Minispiele zur Rezeptseite (`redcommand99779/websiterezepte`). Statisch, nur HTM
 - `spiele/`: `memory`, `2048`, `snake` (je `.html` + `.js`), alle am Handy bedienbar (Tippen, Wischen, Steuerkreuz)
 - `coins.js`: Münzstand. Liegt im Browser (`localStorage`, Schlüssel `rezeptecoins`). Beide Seiten liegen unter derselben Hauptadresse (`redcommand99779.github.io`) und können ihn gemeinsam lesen. Der Wert ist nicht fälschungssicher, es ist ein Spiel.
 - `stats.js`: GoatCounter-Zählung, dasselbe Konto (`theredcommand`) wie die Rezeptseite. Aufrufe heißen dort `rezeptegames/<Seite>`, Spielrunden `runde/<Spiel>` (die Spiele rufen am Rundenende `spielRunde("name")` auf). Der Admin-Modus der Rezeptseite (`localStorage` `adminModus`) zählt nicht mit.
+- `bilder/hintergrund.jpg` (Logo als abgedunkelter Hintergrund der Startseite, `<body class="startseite">`), `bilder/vorschau.jpg` (1200×630 für geteilte Links), `favicon.png`/`apple-touch-icon.png` (Ausschnitt aus dem Logo). Das Logo hat der Nutzer selbst erstellt.
 - `schriften/typodermic/`: Nasalization mit Lizenz-PDF (selbst gehostet, wie auf der Rezeptseite)
 
 ## Coins pro Runde

@@ -112,15 +112,6 @@ button:focus-visible {
   box-shadow: 0 0 8px #ffd23d;
 }
 
-.logo {
-  display: block;
-  width: min(100%, 560px);
-  height: auto;
-  margin: 0 0 1.5rem;
-  border: 1px solid var(--linie);
-  border-radius: 10px;
-}
-
 h1 {
   margin: 0 0 0.5rem;
   font-size: clamp(1.9rem, 6vw, 3rem);
@@ -319,3 +310,16 @@ h1 {
 .steuerkreuz .links { grid-column: 1; grid-row: 2; }
 .steuerkreuz .unten { grid-column: 2; grid-row: 2; }
 .steuerkreuz .rechts { grid-column: 3; grid-row: 2; }
+
+/* Startseite: das Logo als abgedunkelter Hintergrund, nach unten in die Seitenfarbe ausgeblendet */
+body.startseite {
+  background:
+    linear-gradient(to bottom, rgba(10, 12, 22, 0.45) 0%, rgba(10, 12, 22, 0.8) 55%, var(--bg) 100%) top center / 100% 66.7vw no-repeat,
+    url("bilder/hintergrund.jpg") top center / 100% auto no-repeat,
+    var(--bg);
+}
+
+body.startseite .untertitel,
+body.startseite .hinweis {
+  text-shadow: 0 1px 8px var(--bg), 0 0 4px var(--bg);
+}
